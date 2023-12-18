@@ -1,7 +1,9 @@
 from flask import Flask, request
+from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 SHORTEN_BASE_URL = "https://cleanuri.com/api/v1/shorten"
 
